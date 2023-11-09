@@ -1,13 +1,11 @@
-# Codeby @1ssb
-# sudo pip install keyboard
-# To run: sudo python3 this_file.py
+# Code by @1ssb
 
 import open3d as o3d
 import os
 import keyboard
 
 def load_point_clouds(directory):
-    filenames = sorted([f for f in os.listdir(directory) if f.endswith('.ply') and f.startswith('cloud_')])
+    filenames = sorted([f for f in os.listdir(directory) if f.endswith('.ply') and f.startswith('cloud_')]) # Change the fetcher as needed
     return [os.path.join(directory, filename) for filename in filenames]
 
 def display_point_cloud(file_path):
@@ -37,7 +35,7 @@ def display_point_cloud(file_path):
     return 1
 
 def main():
-    directory = "./Point_Clouds-2/"
+    directory = "./Point_Clouds/" # Update as needed
     point_cloud_filepaths = load_point_clouds(directory)
     total_point_clouds = len(point_cloud_filepaths)
     print(f"Total number of point clouds: {total_point_clouds}")
